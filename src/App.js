@@ -3,9 +3,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-white">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="animate-spin" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
