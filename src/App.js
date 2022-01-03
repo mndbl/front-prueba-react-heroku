@@ -11,6 +11,9 @@ import './charts/ChartjsConfig';
 
 // Import pages
 import Dashboard from './pages/Dashboard';
+import { Settings } from './pages/settings/Settings';
+import { LandingPage } from './pages/LandingPage';
+import { UserProvider } from './context/user/UserProvider';
 
 export function App() {
 
@@ -23,12 +26,15 @@ export function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
+    <UserProvider>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/dashboard">
           <Dashboard />
         </Route>
+        <Route path="/settings" component={Settings} />
+        <Route path="/" component={LandingPage} />
+        <Route path="*" > 404 no found</Route>
       </Switch>
-    </>
+    </UserProvider>
   );
 }

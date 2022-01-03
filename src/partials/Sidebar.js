@@ -75,7 +75,7 @@ function Sidebar({
             </svg>
           </button>
           {/* Logo */}
-          <NavLink exact to="/" className="block">
+          <NavLink exact to="/dashboard" className="block">
             <svg width="32" height="32" viewBox="0 0 32 32">
               <defs>
                 <linearGradient x1="28.538%" y1="20.229%" x2="100%" y2="108.156%" id="logo-a">
@@ -105,8 +105,8 @@ function Sidebar({
             </h3>
             <ul className="mt-3">
               {/* Dashboard */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname === '/' && 'bg-gray-900'}`}>
-                <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname === '/' && 'hover:text-gray-200'}`}>
+              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname === '/dashboard' && 'bg-gray-900'}`}>
+                <NavLink exact to="/dashboard" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname === '/dashboard' && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
                       <path className={`fill-current text-gray-400 ${pathname === '/' && '!text-indigo-500'}`} d="M12 0C5.383 0 0 5.383 0 12s5.383 12 12 12 12-5.383 12-12S18.617 0 12 0z" />
@@ -337,6 +337,16 @@ function Sidebar({
                       </a>
                       <div className="lg:hidden lg:sidebar-expanded:block 2xl:block">
                         <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
+                          <li className="mb-1 last:mb-0">
+                            <NavLink exact to="/settings/roles" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Roles</span>
+                            </NavLink>
+                          </li>
+                          <li className="mb-1 last:mb-0">
+                            <NavLink exact to="/settings/assign-roles" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
+                              <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Assign Roles</span>
+                            </NavLink>
+                          </li>
                           <li className="mb-1 last:mb-0">
                             <NavLink exact to="/" className="block text-gray-400 hover:text-gray-200 transition duration-150 truncate">
                               <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">My Account</span>

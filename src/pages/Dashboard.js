@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import UserContext from '../context/user/UserContext';
 import WelcomeBanner from '../partials/dashboard/WelcomeBanner';
 import DashboardAvatars from '../partials/dashboard/DashboardAvatars';
 import FilterButton from '../partials/actions/FilterButton';
@@ -19,10 +21,11 @@ import DashboardCard13 from '../partials/dashboard/DashboardCard13';
 import { AdminLayout } from '../layouts/AdminLayout';
 
 function Dashboard() {
+  const [userStore] = useContext(UserContext)
   return (
     <AdminLayout>
       {/* Welcome banner */}
-      <WelcomeBanner />
+      <WelcomeBanner user={userStore} />
 
       {/* Dashboard actions */}
       <div className="sm:flex sm:justify-between sm:items-center mb-8">

@@ -1,11 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Transition from '../../utils/Transition';
+import UserContext from '../../context/user/UserContext';
 
 import UserAvatar from '../../images/user-avatar-32.png';
+import { types } from '../../context/user/userReducer';
 
 function UserMenu() {
-
+  const [userStore, dispatch] = useContext(UserContext);
+  const { user } = userStore;
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const trigger = useRef(null);
@@ -14,7 +17,7 @@ function UserMenu() {
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }) => {
-      if (!dropdownOpen || dropdown.current.contains(target) || trigger.current.contains(target)) return;
+      if (!dropdownOpen || dropdown?.current?.contains(target) || trigger?.current?.contains(target)) return;
       setDropdownOpen(false);
     };
     document.addEventListener('click', clickHandler);
@@ -31,6 +34,7 @@ function UserMenu() {
     return () => document.removeEventListener('keydown', keyHandler);
   });
 
+
   return (
     <div className="relative inline-flex">
       <button
@@ -42,7 +46,7 @@ function UserMenu() {
       >
         <img className="w-8 h-8 rounded-full" src={UserAvatar} width="32" height="32" alt="User" />
         <div className="flex items-center truncate">
-          <span className="truncate ml-2 text-sm font-medium group-hover:text-gray-800">Acme Inc.</span>
+          <span className="truncate ml-2 text-sm font-medium group-hover:text-gray-800">{user.username}</span>
           <svg className="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400" viewBox="0 0 12 12">
             <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
           </svg>
@@ -65,14 +69,14 @@ function UserMenu() {
           onBlur={() => setDropdownOpen(false)}
         >
           <div className="pt-0.5 pb-2 px-3 mb-1 border-b border-gray-200">
-            <div className="font-medium text-gray-800">Acme Inc.</div>
+            <div className="font-medium text-gray-800">{user.username}</div>
             <div className="text-xs text-gray-500 italic">Administrator</div>
           </div>
           <ul>
             <li>
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
-                to="/"
+                to="/settings"
                 onClick={() => setDropdownOpen(!dropdownOpen)}
               >
                 Settings
@@ -82,7 +86,9 @@ function UserMenu() {
               <Link
                 className="font-medium text-sm text-indigo-500 hover:text-indigo-600 flex items-center py-1 px-3"
                 to="/"
-                onClick={() => setDropdownOpen(!dropdownOpen)}
+                onClick={() => dispatch({
+                  type: types.AUTH_LOGOUT
+                })}
               >
                 Sign Out
               </Link>
