@@ -14,9 +14,7 @@ export function SettingsRole() {
     const [showUpdateForm, setShowUpdateForm] = useState(false);
     const [assignRoleForm, setAssignRoleForm] = useState(false);
     const history = useHistory()
-    const handleNewRole = () => {
-        history.push('/settings/add-role')
-    }
+
 
     return (
         <GlobalProvider>
@@ -56,9 +54,9 @@ export function SettingsRole() {
                     </div>
                 </div>
             }
-            {showCreateForm && <CreateRole show={showCreateForm} setShow={setShowCreateForm} />}
-            {showUpdateForm && <UpdateRole show={showUpdateForm} setShow={setShowUpdateForm} />}
-            {assignRoleForm && <AssignRole show={assignRoleForm} setShow={setAssignRoleForm} />}
+            {showCreateForm && <CreateRole setShow={setShowCreateForm} />}
+            {showUpdateForm && <UpdateRole setShow={setShowUpdateForm} />}
+            {assignRoleForm && <AssignRole setShow={setAssignRoleForm} />}
         </GlobalProvider>
     )
 }

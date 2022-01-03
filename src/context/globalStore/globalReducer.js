@@ -1,5 +1,6 @@
 
 export const types = {
+    ASSIGN_ROLE: 'ASSIGN_ROLE',
     ROLE_SELECTED: 'ROLE_SELECTED',
     NEW_ROLE: 'NEW_ROLE',
     EDIT_ROLE: 'EDIT_ROLE',
@@ -9,8 +10,12 @@ export const types = {
 export const initialStates = {
     roleSel: {},
     roles: [
-        { id: 0, name: 'Super Admin', description: 'Usuario superadmin' },
-        { id: 1, name: 'Admin', description: 'Usuario admin' }
+        { id: 1, name: 'Super Admin', description: 'Usuario superadmin' },
+        { id: 2, name: 'Admin', description: 'Usuario admin' }
+    ],
+    profiles: [
+        { id: 1, user_id: 1, role_id: null },
+        { id: 2, user_id: 2, role_id: null }
     ]
 }
 
@@ -43,6 +48,9 @@ export const globalReducer = (state, action) => {
                 ...state,
                 roles: state.roles.map(role => role.id === action.payload.id ? action.payload : role)
             }
+
+        case types.ASSIGN_ROLE:
+            return state;
 
 
         case types.DELETE_ROLE:
