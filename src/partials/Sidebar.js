@@ -121,7 +121,7 @@ function Sidebar({
                 </NavLink>
               </li>
               {/* Analytics */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('analytics') && 'bg-gray-900'}`}>
+              {/* <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('analytics') && 'bg-gray-900'}`}>
                 <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname.includes('analytics') && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
@@ -131,15 +131,15 @@ function Sidebar({
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Analytics</span>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* E-Commerce */}
-              <SidebarLinkGroup activecondition={pathname.includes('ecommerce')}>
+              {/* <SidebarLinkGroup activecondition={pathname.includes('ecommerce')}>
                 {(handleClick, open) => {
                   return <ECommerceSection handleClick={handleClick} open={open} pathname={pathname} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded} />
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> */}
               {/* Campaigns */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('campaigns') && 'bg-gray-900'}`}>
+              {/* <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('campaigns') && 'bg-gray-900'}`}>
                 <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname.includes('campaigns') && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
@@ -149,15 +149,15 @@ function Sidebar({
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Campaigns</span>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* Team */}
-              <SidebarLinkGroup activecondition={pathname.includes('team')}>
+              {/* <SidebarLinkGroup activecondition={pathname.includes('team')}>
                 {(handleClick, open) => {
                   return <TeamSection handleClick={handleClick} open={open} pathname={pathname} sidebarExpanded={sidebarExpanded} setSidebarExpanded={setSidebarExpanded}/>
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> */}
               {/* Messages */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('messages') && 'bg-gray-900'}`}>
+              {/* <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('messages') && 'bg-gray-900'}`}>
                 <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname.includes('messages') && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
@@ -167,9 +167,9 @@ function Sidebar({
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Messages</span>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* Tasks */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('tasks') && 'bg-gray-900'}`}>
+              {/* <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('tasks') && 'bg-gray-900'}`}>
                 <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname.includes('tasks') && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
@@ -180,9 +180,9 @@ function Sidebar({
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Tasks</span>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* Inbox */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('inbox') && 'bg-gray-900'}`}>
+              {/* <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('inbox') && 'bg-gray-900'}`}>
                 <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname.includes('inbox') && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
@@ -192,9 +192,9 @@ function Sidebar({
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Inbox</span>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* Calendar */}
-              <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('calendar') && 'bg-gray-900'}`}>
+              {/* <li className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${pathname.includes('calendar') && 'bg-gray-900'}`}>
                 <NavLink exact to="/" className={`block text-gray-200 hover:text-white truncate transition duration-150 ${pathname.includes('calendar') && 'hover:text-gray-200'}`}>
                   <div className="flex items-center">
                     <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
@@ -204,7 +204,7 @@ function Sidebar({
                     <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Calendar</span>
                   </div>
                 </NavLink>
-              </li>
+              </li> */}
               {/* Settings */}
               <SidebarLinkGroup activecondition={pathname.includes('settings')}>
                 {(handleClick, open) => {
@@ -212,7 +212,7 @@ function Sidebar({
                 }}
               </SidebarLinkGroup>
               {/* Utility */}
-              <SidebarLinkGroup activecondition={pathname.includes('utility')}>
+              {/* <SidebarLinkGroup activecondition={pathname.includes('utility')}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
@@ -226,9 +226,9 @@ function Sidebar({
                               <circle className={`fill-current text-gray-400 ${pathname.includes('utility') && 'text-indigo-300'}`} cx="5.5" cy="18.5" r="4.5" />
                             </svg>
                             <span className="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Utility</span>
-                          </div>
+                          </div> */}
                           {/* Icon */}
-                          <div className="flex shrink-0 ml-2">
+                          {/* <div className="flex shrink-0 ml-2">
                             <svg className={`w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 ${open && 'transform rotate-180'}`} viewBox="0 0 12 12">
                               <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
                             </svg>
@@ -267,7 +267,7 @@ function Sidebar({
                     </React.Fragment>
                   );
                 }}
-              </SidebarLinkGroup>
+              </SidebarLinkGroup> */}
             </ul>
           </div>
         </div>
