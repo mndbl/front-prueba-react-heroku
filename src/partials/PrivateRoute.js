@@ -3,13 +3,15 @@ import { Route, Redirect } from "react-router-dom";
 import UserContext from "../context/user/UserContext";
 
 export function PrivateRoute({ children, ...rest }) {
-    const [store] = useContext(UserContext);
-    const { user } = store;
+    const [state] = useContext(UserContext);
+    const {user}=state;
+    const username = localStorage.getItem('username');
+    
     return (
         <Route
             {...rest}
             render={({ location }) =>
-                user.username ? (
+                username ? (
                     children
                 ) : (
                     <Redirect

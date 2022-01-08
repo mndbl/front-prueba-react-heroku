@@ -21,11 +21,11 @@ import DashboardCard13 from '../partials/dashboard/DashboardCard13';
 import { AdminLayout } from '../layouts/AdminLayout';
 
 function Dashboard() {
-  const [userStore] = useContext(UserContext)
+  const username = localStorage.getItem('username')
   return (
     <AdminLayout>
       {/* Welcome banner */}
-      <WelcomeBanner user={userStore} />
+      <WelcomeBanner username={username} />
 
       {/* Dashboard actions */}
       <div className="sm:flex sm:justify-between sm:items-center mb-8">
