@@ -12,7 +12,7 @@ export function ListRoles({ setShow }) {
             type: types.ROLE_SELECTED,
             payload: role_id
         })
-        setShow(true)
+        setShow(2)
     }
     return (
         roles.map((role, index) => {

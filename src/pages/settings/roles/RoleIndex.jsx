@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { AddButton } from '../../../components/buttons/AddButton';
 import { AdminContentLayout } from '../../../components/layouts/AdminContentLayout';
 import { HeaderContentLayout } from '../../../components/layouts/HeaderContentLayout';
+import { useShow } from '../../../hooks/useShow';
 import { AssignRole } from './AssignRole';
 import CreateRole from './CreateRole';
 import { ListRoles } from './ListRoles';
@@ -9,21 +9,17 @@ import UpdateRole from './UpdateRole';
 
 
 export function RoleIndex() {
-    const [showCreateForm, setShowCreateForm] = useState(false);
-    const [showUpdateForm, setShowUpdateForm] = useState(false);
-    const [assignRoleForm, setAssignRoleForm] = useState(false);
-
-
+    const [show, setShow] = useShow()
 
     return (
         <>
-            {!showCreateForm && !showUpdateForm && !assignRoleForm &&
+            {show === 0  &&
                 <AdminContentLayout>
                     <HeaderContentLayout description="Roles">
 
                         <div className="space-x-2">
-                            <AddButton onclick={() => setShowCreateForm(true)} text="Add Role" />
-                            <AddButton onclick={() => setAssignRoleForm(true)} text="Assign Role" />
+                            <AddButton onclick={() => setShow(1)} text="Add Role" />
+                            <AddButton onclick={() => setShow(3)} text="Assign Role" />
                         </div>
                     </HeaderContentLayout>
                     <div className="p-3">
@@ -45,15 +41,15 @@ export function RoleIndex() {
                             </thead>
                             {/* Table body */}
                             <tbody className="text-sm divide-y divide-gray-100">
-                                <ListRoles setShow={setShowUpdateForm} />
+                                <ListRoles setShow={setShow} />
                             </tbody>
                         </table>
                     </div>
                 </AdminContentLayout>
             }
-            {showCreateForm && <CreateRole setShow={setShowCreateForm} />}
-            {showUpdateForm && <UpdateRole setShow={setShowUpdateForm} />}
-            {assignRoleForm && <AssignRole setShow={setAssignRoleForm} />}
+            {show === 1 && <CreateRole setShow={setShow} />}
+            {show === 2 && <UpdateRole setShow={setShow} />}
+            {show === 3 && <AssignRole setShow={setShow} />}
         </>
     )
 }
