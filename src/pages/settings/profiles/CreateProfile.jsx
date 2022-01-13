@@ -17,7 +17,7 @@ export function CreateProfile({ setShow }) {
     }
     const submitProfile = (e) => {
         e.preventDefault();
-
+        setNewProfile({ ...newProfile, id: now() })
         dispatch({
             type: types.NEW_PROFILE,
             payload: newProfile
@@ -53,7 +53,7 @@ export function CreateProfile({ setShow }) {
                                 *
                             </span>
                         </label>
-                        <select id="required-user" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" name="user" onChange={e => setNewProfile({ ...newProfile, id: now(), user_id: parseInt(e.target.value) })} value={newProfile.user_id}>
+                        <select id="required-user" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" name="user" onChange={e => setNewProfile({ ...newProfile, user_id: parseInt(e.target.value) })} value={newProfile.user_id}>
                             <option value="" key="">Seleccione</option>
                             {users.map(user => <option value={user.id} key={user.id}>{user.name}</option>)}
                         </select>

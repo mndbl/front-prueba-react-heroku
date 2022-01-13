@@ -22,7 +22,7 @@ export function AssignRole({ setShow }) {
             type: types.ASSIGN_ROLE,
             payload: newAssign
         })
-        setShow(false);
+        setShow(0);
     }
     return (
         <AdminContentLayout>
